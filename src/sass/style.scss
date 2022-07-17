@@ -1,0 +1,170 @@
+// variables primary
+@use './colors' as *;
+
+// site
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	// font-family: 'Nunito', sans-serif;
+	font-size: 1rem;
+	min-height: 100vh;
+	min-width: 32rem;
+}
+
+.overflow {
+	overflow-y: hidden;
+}
+
+header {
+	position: absolute;
+}
+
+.navbar {
+	width: 100vw;
+	height: 5rem;
+	display: flex;
+	justify-content: center;
+	justify-content: flex-end;
+	margin: 2rem 0;
+	padding: 0 2rem;
+
+	&__desktop {
+		display: none;
+	}
+
+	&__mobile {
+		.menu {
+			&__btn {
+				position: relative;
+				display: flex;
+				align-items: center;
+				width: 2.5rem;
+				height: 2.5rem;
+				border: none;
+				background-color: transparent;
+				// background-color: $main_bg;
+				cursor: pointer;
+				z-index: 2;
+
+				&--line {
+					display: block;
+					position: absolute;
+					width: 2.5rem;
+					height: 0.2rem;
+					// background-color: white;
+					background-color: $main_bg;
+					// background-color: $headings;
+					transition: opacity 0.5s cubic-bezier(0.9, 0, 0.33, 1), transform 0.5s cubic-bezier(0.9, 0, 0.33, 1);
+				}
+
+				&--line:nth-child(1).active {
+					opacity: 0;
+				}
+
+				&--line:nth-child(2) {
+					top: 5px;
+				}
+
+				&--line:nth-child(2).active {
+					transform: rotate(45deg) translate(4.5px, 5.5px);
+				}
+
+				&--line:nth-child(3) {
+					bottom: 4px;
+				}
+
+				&--line:nth-child(3).active {
+					transform: rotate(-45deg) translate(4.5px, -5.5px);
+				}
+			}
+
+			&__box {
+				position: fixed;
+				top: 0;
+				left: 0;
+				height: 0%;
+				width: 100%;
+				// background-color: $black;
+				z-index: 1;
+				transition: height 0.5s, background 0.8s;
+
+				&--links {
+					position: relative;
+					top: 50%;
+					transform: translateY(-50%);
+					margin: 2.5rem;
+					text-align: center;
+
+					a {
+						display: inline-block;
+						position: relative;
+						top: -30rem;
+						text-transform: uppercase;
+						font-size: 3rem;
+						padding: 1rem 0;
+						// color: $white;
+						color: $headings;
+						transition: top 0.8s;
+					}
+				}
+			}
+
+			&__box.display {
+				height: 100%;
+				// background: url('/dist/img/leaves-menu-bg.jpg') center no-repeat;
+				background: rgba(0, 0, 0, 0.8);
+
+				a {
+					top: 0rem;
+				}
+			}
+		}
+	}
+}
+
+.hero {
+	background-image: url("../img/leaves-menu-bg.jpg");
+	height: 100vh;
+	width: 100%;
+
+	&__sidebar {
+		position: absolute;
+		writing-mode: vertical-lr;
+		text-transform: uppercase;
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		width: 4rem;
+		background-color: $alt_bg;
+
+		&--text {
+			font-size: 2rem;
+			transform: rotate(180deg);
+		}
+
+		a {
+			img {
+				width: 4rem;
+			}
+		}
+	}
+}
+
+/// architekt z pasją, projekty z duszą
+///
