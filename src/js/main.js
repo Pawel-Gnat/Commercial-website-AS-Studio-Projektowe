@@ -1,10 +1,10 @@
-const menuBtn = document.querySelector('.menu__btn')
-const animateBtn = document.querySelector('.active')
-const displayLinks = document.querySelector('.display')
-const linksBox = document.querySelector('.menu__box')
-const body = document.querySelector('body')
-const disableScroll = document.querySelector('.overflow')
-const menuLinks = document.querySelectorAll('.menu__box--links a')
+const menuBtn = document.querySelector('.menu__btn') // menu button in the mobile view
+const animateBtn = document.querySelector('.active') // class added to each of my menu button lines (to animate them)
+const displayLinks = document.querySelector('.display') // background of the mobile view, after pressing the menu button
+const linksBox = document.querySelector('.menu__box') // container of menu links in the mobile view
+const body = document.querySelector('body') // html element
+const disableScroll = document.querySelector('.overflow') // class set on body to prevent from vertical scroll (during active menu button)
+const menuLinks = document.querySelectorAll('.menu__box--links a') // mobile view links
 const buttonLines = Array.from(document.querySelectorAll('.menu__btn--line')) // an array with my button menu lines
 
 function toggleActive() {
@@ -31,5 +31,3 @@ menuLinks.forEach(links => {
 })
 
 menuBtn.addEventListener('click', toggleActive)
-
-

@@ -26,8 +26,11 @@ body {
 }
 
 .overflow {
+	// prevent vertical scroll, while mobile menu button is active
 	overflow-y: hidden;
 }
+
+// NAVIGATION
 
 header {
 	position: absolute;
@@ -61,6 +64,7 @@ header {
 				z-index: 2;
 
 				&--line {
+					// lines of menu button icon
 					display: block;
 					position: absolute;
 					width: 2.5rem;
@@ -93,6 +97,7 @@ header {
 			}
 
 			&__box {
+				// container for mobile menu links
 				position: fixed;
 				top: 0;
 				left: 0;
@@ -124,6 +129,7 @@ header {
 			}
 
 			&__box.display {
+				// background of the mobile menu view
 				height: 100%;
 				// background: url('/dist/img/leaves-menu-bg.jpg') center no-repeat;
 				background: rgba(0, 0, 0, 0.8);
@@ -136,35 +142,48 @@ header {
 	}
 }
 
+// HERO SECTION
+
 .hero {
-	background-image: url("../img/leaves-menu-bg.jpg");
+	background-image: url('../img/leaves-menu-bg.jpg');
 	height: 100vh;
 	width: 100%;
 
 	&__sidebar {
+		// left sidebar
 		position: absolute;
 		writing-mode: vertical-lr;
 		text-transform: uppercase;
 		display: flex;
 		gap: 1rem;
-		justify-content: center;
+		justify-content: space-between;
 		align-items: center;
-		height: 100vh;
+		height: 100%;
 		width: 4rem;
 		background-color: $alt_bg;
 
 		&--text {
-			font-size: 2rem;
+			flex-shrink: 0;
+			font-size: 1.6rem;
+			padding-bottom: 2rem;
+			color: $text_primary;
 			transform: rotate(180deg);
 		}
 
-		a {
-			img {
-				width: 4rem;
+		&--vertical-line {
+			flex-grow: 1;
+			border-left: 1px solid $text_primary;
+		}
+
+		&--media {
+			flex-shrink: 0;
+
+			a {
+				img {
+					width: 4rem;
+					filter: invert(87%) sepia(11%) saturate(209%) hue-rotate(169deg) brightness(82%) contrast(87%);
+				}
 			}
 		}
 	}
 }
-
-/// architekt z pasją, projekty z duszą
-///
